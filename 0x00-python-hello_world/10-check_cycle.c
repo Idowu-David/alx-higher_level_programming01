@@ -17,6 +17,8 @@ int check_cycle(listint_t *list)
 	int i, result, inf = 0;
 
 	tort = hare = list;
+	if (list == NULL)
+		return (0);
 	if (tort->next != NULL)
 	{
 		while (inf == 0)
