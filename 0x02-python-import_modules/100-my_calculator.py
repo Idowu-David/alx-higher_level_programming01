@@ -3,8 +3,10 @@ if __name__ == "__main__":
     from calculator_1 import add, sub, div, mul
     import sys
     argv = sys.argv[1:]
+    print(argv)
     _len = len(argv)
-    if l != 3:
+    print(_len)
+    if _len != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
     operator = ["+", "-", "*", "/"]
