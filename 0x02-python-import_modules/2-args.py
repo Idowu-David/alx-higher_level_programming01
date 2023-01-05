@@ -7,7 +7,10 @@ if __name__ == "__main__":
         print("{} arguments.".format(_len))
     else:
         index = 1
-        print("{} arguments:".format(_len))
+        if _len == 1:
+            print("{} argument.".format(_len))
+        else:
+            print("{} arguments:".format(_len))
         for arg in argv:
             print("{:d}: {}".format(index, sys.argv[index]))
             if index != _len:
