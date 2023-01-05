@@ -8,7 +8,7 @@ if __name__ == "__main__":
     else:
         index = 1
         if _len == 1:
-            print("{} argument.".format(_len))
+            print("{} argument:".format(_len))
         else:
             print("{} arguments:".format(_len))
         for arg in argv:
