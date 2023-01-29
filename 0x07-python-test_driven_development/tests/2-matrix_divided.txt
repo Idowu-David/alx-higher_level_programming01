@@ -1,0 +1,63 @@
+Testfile for the ``matrix_divided`` module
+=============================
+
+To use the ``matrix_divided`` module, first import it
+
+============================
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+negative number
+>>> matrix_divided(matrix, -3)
+[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+matrix not a list of list
+>>> matrix_divided([1, 2, 3], 3)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([], 3)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([[1, 2, 3], [4, 5]], 3)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+>>> matrix_divided([[1, 2, 3], []], 2)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+>>> matrix_divided(matrix, "School")
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+>>> matrix_divided(matrix, None)
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+>>> matrix_divided(matrix, float('inf'))
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+>>> matrix_divided(matrix, [1, 2])
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
