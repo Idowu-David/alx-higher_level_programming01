@@ -59,6 +59,8 @@ class Rectangle:
         """ returns a printable representation of rectangle """
         rect = ""
         count = 0
+        if self.width == 0 or self.height == 0:
+            return rect
         for row in range(self.height):
             for col in range(self.width):
                 rect += "#"
