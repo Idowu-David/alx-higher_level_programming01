@@ -6,7 +6,15 @@ class Rectangle:
     """ Rectangle class """
     def __init__(self, width=0, height=0):
         """ initialisation of width and height attribute of rectangle """
+        if type(width) is not int:
+            raise TypeError("width must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0")
         self.__width = width
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
         self.__height = height
 
     @property
@@ -43,8 +51,9 @@ class Rectangle:
 
     def perimeter(self):
         """ returns the perimeter of the rectangle """
+        if self.width == 0 or self.height == 0:
+            return 0
         return 2 * (self.width + self.height)
-
 
     def __str__(self):
         """ returns a printable representation of rectangle """
@@ -54,6 +63,5 @@ class Rectangle:
             for col in range(self.width):
                 rect += "#"
             count += 1
-            if count < self.height:
-                rect += "\n"
+            if count < self.height:                                        rect += "\n"
         return rect
