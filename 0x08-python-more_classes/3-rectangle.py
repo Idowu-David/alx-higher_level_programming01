@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" this module de_ines a rectangle class """
+""" this module defines a rectangle class """
 
 
 class Rectangle:
@@ -63,5 +63,6 @@ class Rectangle:
             for col in range(self.width):
                 rect += "#"
             count += 1
-            if count < self.height:                                        rect += "\n"
+            if count < self.height:
+                rect += "\n"
         return rect
