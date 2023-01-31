@@ -61,4 +61,9 @@ TypeError: last_name must be a string
 My name is  Idowu
 
 >>> say_my_name("", "")
-My name is  
+My name is 
+
+>>> say_my_name({"LeBron": 6, "James": 23}, 7.7)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+ 
