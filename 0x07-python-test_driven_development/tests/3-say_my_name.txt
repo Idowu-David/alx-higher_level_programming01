@@ -56,3 +56,9 @@ TypeError: last_name must be a string
 Traceback (most recent call last):
 ...
 TypeError: last_name must be a string
+
+>>> say_my_name("", "Idowu")
+My name is  Idowu
+
+>>> say_my_name("", "")
+My name is  
