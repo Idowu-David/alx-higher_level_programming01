@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" defines BaseGeometey class """
+""" defines BaseGeometey class and Rectangle class(subclass) """
 
 
 class BaseGeometry:
@@ -10,7 +10,18 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """ validates the `value` passed by the user """
+        self.name = name
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(self.name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(self.name))
+        self.value = value
+
+
+class Rectangle(BaseGeometry):
+    """ Rectangle class """
+    def __init__(self, width, height):
+        """ initialisation """
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__height = height
