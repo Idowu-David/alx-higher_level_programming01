@@ -8,5 +8,3 @@ class MyList(list):
         """ prints the list object in a sorted order """
         new_list = sorted(self)
         print(new_list)
-
-
