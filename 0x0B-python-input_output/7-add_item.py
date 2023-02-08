@@ -13,13 +13,8 @@ save = __import__("5-save_to_json_file").save_to_json_file
 args = sys.argv[1:]
 
 try:
-    with open(filename) as f:
-        add = load(filename)
-    with open(filename, "w") as f:
-        for item in args:
-            add.append(item)
-        f.write(json.dumps(add))
+    add = load(filename)
 except FileNotFoundError:
-    with open(filename, "w") as f:
-        add = []
-        f.write(json.dumps(add))
+    add = []
+add.extend(args)
+save(args, filename)
