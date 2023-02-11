@@ -56,6 +56,24 @@ class Rectangle(Base):
         self.setter_validator("y", value)
         self.__y = value
 
+    def area(self):
+        """ calculates and returns the area value of Rectangle instance """
+        return self.width * self.height
+
+    def display(self):
+        """ prints in stdout the Rectangle instance with the character #"""
+        x, y = self.x, self.y
+        print("\n" * y, end="")
+        for row in range(self.height):
+            print(" " * x, end="")
+            for col in range(self.width):
+                print("#", end="")
+            print()
+
+
+    def __str__(self):
+        """ returns the string representation of Rectangle instance """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
 
     @staticmethod
     def setter_validator(attr, value):
