@@ -70,6 +70,42 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
+    def update(self, *args, **kwargs):
+        """ updates the attributes of Rectangle instance in the order:
+        id, width, height, x, y
+        """
+        if not args:
+            for key, value in kwargs.items():
+                if key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+                elif key == "id":
+                    self.id = value
+
+        idx = 0
+        for arg in args:
+            if idx == 0:
+                self.id = arg
+            elif idx == 1:
+                self.width = arg
+            elif idx == 2:
+                self.height = arg
+            elif idx == 3:
+                self.x = arg
+            elif idx == 4:
+                self.y = arg
+            idx += 1
+
+    def to_dictionary(self):
+        """ returns the dictionary representation of Rectangle instance """
+        rect_dict = {'id': self.id, 'width': self.width, 'height': self.height, 'x': self.x, 'y': self.y}
+        return rect_dict
+
 
     def __str__(self):
         """ returns the string representation of Rectangle instance """
