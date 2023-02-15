@@ -13,7 +13,7 @@ class Square(Rectangle):
     def size(self):
         """ size getter """
         return self.width
-    
+
     @size.setter
     def size(self, value):
         """ size setter """
@@ -45,10 +45,16 @@ class Square(Rectangle):
             idx += 1
 
     def to_dictionary(self):
-        """ returns the dictionary representation of all the instances of square """
-        sq_dict = {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
+        """ returns the dictionary representation of
+        all the instances of square """
+        sq_dict = {
+                'id': self.id,
+                'size': self.size,
+                'x': self.x,
+                'y': self.y}
         return sq_dict
 
     def __str__(self):
         """ returns the string representation of Square instance """
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.size)
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x, self.y, self.size)
