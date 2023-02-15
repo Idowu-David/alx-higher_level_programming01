@@ -5,7 +5,8 @@ import json
 
 class Base:
     """ defines the Base class for other geometry shape """
-    __nb_object =0
+    __nb_object = 0
+
     def __init__(self, id=None):
         """ instance initialiser """
         if id:
@@ -23,7 +24,7 @@ class Base:
 
         Otherwise, return the JSON string representation of list_dictionaries
         """
-        if not list_dictionaries or list_dictionaries == None:
+        if not list_dictionaries or list_dictionaries is None:
             return "[]"
         json_dict = []
         return json.dumps(list_dictionaries)
