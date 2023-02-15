@@ -103,13 +103,16 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ returns the dictionary representation of Rectangle instance """
-        rect_dict = {'id': self.id, 'width': self.width, 'height': self.height, 'x': self.x, 'y': self.y}
-        return rect_dict
-
+        return {'x': getattr(self, "x"),
+                'y': getattr(self, "y"),
+                'id': getattr(self, "id"),
+                'height': getattr(self, "height"),
+                'width': getattr(self, "width")}
 
     def __str__(self):
         """ returns the string representation of Rectangle instance """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.x, self.y, self.width, self.height)
 
     @staticmethod
     def setter_validator(attr, value):
