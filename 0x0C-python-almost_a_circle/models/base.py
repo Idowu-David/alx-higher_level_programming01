@@ -4,7 +4,8 @@ import json
 
 
 class Base:
-    __nb_object = 0
+    """ defines the Base class for other geometry shape """
+    __nb_object =0
     def __init__(self, id=None):
         """ instance initialiser """
         if id:
