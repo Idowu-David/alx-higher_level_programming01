@@ -10,7 +10,8 @@ for (let i = 0; i < argv.length; i++) {
 if (parseArg.length <= 1) {
   console.log(0);
 } else {
-  parseArg.sort();
+  const numberSort = (a, b) => a - b;
+  parseArg.sort(numberSort);
   parseArg.reverse();
   console.log(parseArg[1]);
 }
