@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ This script lists all states from the database `hbtn_0e_0_usa`:
-    => This script takes 3 arguments: mysql username, mysql password and database name.
+    => This script takes 3 arguments:
+    mysql username, mysql password and database name.
     => This script connects to a MySQL server running on localhost at port 3306
     => Results are sorted in ascending order by states.id
 """
@@ -16,7 +17,8 @@ if __name__ == '__main__':
     db = MySQLdb.connect(host="localhost",
                          user=username,
                          password=pwd,
-                         database=database)
+                         database=database,
+                         port=3306)
     cur = db.cursor()
     query = "SELECT * FROM states ORDER BY states.id"
     cur.execute(query)
