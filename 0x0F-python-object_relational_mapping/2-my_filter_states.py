@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" This script displays all values in the states table where namr matches the argument
-from the database `hbtn_0e_0_usa`:
+""" This script displays all values in the states table where namr matches
+the argument from the database `hbtn_0e_0_usa`:
     => This script takes 4 arguments:
     mysql username, mysql password, database name and state name searched.
     => This script connects to a MySQL server running on localhost at port 3306
@@ -22,7 +22,8 @@ if __name__ == '__main__':
                          database=database,
                          port=3306)
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY states.id".format(state_name) 
+    query = "SELECT * FROM states WHERE name = '{}'
+    ORDER BY states.id".format(state_name) 
     cur.execute(query)
     states = cur.fetchall()
     for state in states:
