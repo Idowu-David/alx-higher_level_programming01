@@ -22,8 +22,8 @@ if __name__ == '__main__':
                          database=database,
                          port=3306)
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name = %s
-    ORDER BY states.id"
+    query = "SELECT * FROM states WHERE name = %s \
+            ORDER BY states.id"
     cur.execute(query, (state_name,))
     states = cur.fetchall()
     for state in states:
